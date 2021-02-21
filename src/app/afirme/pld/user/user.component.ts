@@ -5,8 +5,8 @@ import { SmartTableData } from '../../../@core/data/smart-table';
 
 @Component({
   selector: 'ngx-pld-user',
-  templateUrl: './smart-table.component.html',
-  styleUrls: ['./smart-table.component.scss'],
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss'],
 })
 export class UserComponent {
 

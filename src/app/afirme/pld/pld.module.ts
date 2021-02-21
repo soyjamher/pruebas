@@ -3,7 +3,7 @@ import { NbCardModule, NbIconModule, NbInputModule, NbTreeGridModule } from '@ne
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { TablesRoutingModule, routedComponents } from './tables-routing.module';
+import { PldRoutingModule, routedComponents } from './pld-routing.module';
 import { FsIconComponent } from './tree-grid/tree-grid.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { FsIconComponent } from './tree-grid/tree-grid.component';
     NbIconModule,
     NbInputModule,
     ThemeModule,
-    TablesRoutingModule,
+    PldRoutingModule,
     Ng2SmartTableModule,
   ],
   declarations: [

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-tables',
+  selector: 'ngx-pld',
   template: `<router-outlet></router-outlet>`,
 })
-export class TablesComponent {
+export class PldComponent {
 }

@@ -11,7 +11,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'User',
-        link: '/afirme/user/smart-table',
+        link: '/afirme/pld/user',
       },
     ],
   },

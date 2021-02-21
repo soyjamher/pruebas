@@ -20,9 +20,9 @@ const routes: Routes = [{
         .then(m => m.LayoutModule),
     },
     {
-      path: 'user',
-      loadChildren: () => import('./tables/tables.module')
-        .then(m => m.TablesModule),
+      path: 'pld',
+      loadChildren: () => import('./pld/pld.module')
+        .then(m => m.PldModule),
     },
     {
       path: '',

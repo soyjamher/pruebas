@@ -21,4 +21,4 @@ import { FsIconComponent } from './tree-grid/tree-grid.component';
     FsIconComponent,
   ],
 })
-export class TablesModule { }
+export class PldModule { }

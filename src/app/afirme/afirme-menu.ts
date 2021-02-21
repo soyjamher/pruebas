@@ -10,8 +10,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'layout-outline',
     children: [
       {
-        title: 'Listado',
-        link: '/afirme/layout/stepper',
+        title: 'User',
+        link: '/afirme/user/smart-table',
       },
     ],
   },

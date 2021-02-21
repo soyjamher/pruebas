@@ -1,0 +1,39 @@
+<div class="main-img-container">
+  <a href="https://hubs.ly/H0n55Gb0"
+     target="_blank"
+     class="hero-image-link">
+    <img *ngIf="breakpoint.width >= breakpoints.md"
+         class="main-img"
+         defaultImage="assets/img/default.png"
+         [lazyLoad]="imageUrl"/>
+  </a>
+</div>
+<div class="main-inf">
+  <ng-container *ngIf="forMaterialTheme === false">
+    <ngx-default-admin-info></ngx-default-admin-info>
+  </ng-container>
+
+  <ng-container *ngIf="forMaterialTheme !== false">
+    <ngx-material-admin-info></ngx-material-admin-info>
+  </ng-container>
+
+  <div class="mobile-main-img-container">
+    <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" lazyLoad="assets/img/corporate-theme.png" alt="Light theme Dashboard"/>
+  </div>
+  <div class="badges">
+    <iframe class="stars"
+            src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"
+            frameborder="0"
+            width="170px"
+            scrolling="0">
+    </iframe>
+  </div>
+  <div class="buttons">
+    <a class="btn btn-installation-guidelines"
+       [routerLink]="'/docs/getting-started/installation-guidelines'">Installation Docs</a>
+    <a class="btn btn-demo"
+       href="https://hubs.ly/H0n55nc0"
+       target="_blank">Demo</a>
+  </div>
+</div>
+

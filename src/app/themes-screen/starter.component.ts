@@ -49,7 +49,7 @@ export class NgxStarterComponent implements OnDestroy {
   navigate(themeName: string) {
     this.currentThemeService.setCurrentTheme(themeName);
     this.themeService.changeTheme(themeName);
-    this.router.navigate(['/pages/dashboard'], {queryParams: {theme: themeName}});
+    this.router.navigate(['/afirme/dashboard'], {queryParams: {theme: themeName}});
   }
 
   trackEmailClick() {

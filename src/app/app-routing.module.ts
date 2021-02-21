@@ -12,6 +12,12 @@ import {ThemeGuard} from './@core/guard/theme.guard';
 
 export const routes: Routes = [
   {
+    path: 'afirme',
+    canActivate: [ThemeGuard],
+    loadChildren: () => import('./afirme/afirme.module')
+      .then(m => m.AfirmeModule),
+  },
+  {
     path: 'pages',
     canActivate: [ThemeGuard],
     loadChildren: () => import('./pages/pages.module')
@@ -19,7 +25,7 @@ export const routes: Routes = [
   },
   {
     path: 'themes',
-    loadChildren: () => import('app/themes-screen/starter.module')
+    loadChildren: () => import('../app/themes-screen/starter.module')
       .then(m => m.StarterModule),
   },
   {

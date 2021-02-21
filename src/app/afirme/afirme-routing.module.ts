@@ -15,11 +15,6 @@ const routes: Routes = [{
       component: ECommerceComponent,
     },
     {
-      path: 'layout',
-      loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
-    },
-    {
       path: 'pld',
       loadChildren: () => import('./pld/pld.module')
         .then(m => m.PldModule),

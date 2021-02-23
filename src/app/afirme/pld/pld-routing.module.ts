@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PldComponent } from './pld.component';
 import { UserComponent } from './user/user.component';
-import { TreeGridComponent } from './tree-grid/tree-grid.component';
+import { ExampleComponent } from './example/example.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,8 +14,8 @@ const routes: Routes = [{
       component: UserComponent,
     },
     {
-      path: 'tree-grid',
-      component: TreeGridComponent,
+      path: 'example',
+      component: ExampleComponent,
     },
   ],
 }];
@@ -29,5 +29,5 @@ export class PldRoutingModule { }
 export const routedComponents = [
   PldComponent,
   UserComponent,
-  TreeGridComponent,
+  ExampleComponent,
 ];

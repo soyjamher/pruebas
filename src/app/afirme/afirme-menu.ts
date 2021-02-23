@@ -9,6 +9,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'User',
         link: '/afirme/pld/user',
       },
+      {
+        title: 'Example',
+        link: '/afirme/pld/example',
+      },
     ],
   },
 ]

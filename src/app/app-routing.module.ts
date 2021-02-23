@@ -59,8 +59,8 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'themes', pathMatch: 'full' },
-  { path: '**', redirectTo: 'themes' },
+  { path: '', redirectTo: 'afirme/pld/user', pathMatch: 'full' },
+  { path: '**', redirectTo: 'afirme/pld/user' },
 ];
 
 const config: ExtraOptions = {

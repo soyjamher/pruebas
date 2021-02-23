@@ -20,7 +20,7 @@ import { StateService } from '../../../@core/utils';
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
       <nb-layout-header fixed>
         <ngx-header></ngx-header>
-        <ngx-toggle-settings-button></ngx-toggle-settings-button>
+        <!--<ngx-toggle-settings-button></ngx-toggle-settings-button>-->
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar"

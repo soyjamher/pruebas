@@ -11,44 +11,83 @@ import { SmartTableData } from '../../../@core/data/smart-table';
 export class UserComponent {
 
   settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
+    actions : {
+      columnTitle : 'Acciones',
+      add : false,
+      delete : false,
+      edit : true,
+      position : 'right',
+      custom : [
+        /*{
+          name: 'edit',
+          title: '<i class="nb-edit" title="Edit"></i>'
+        },*/
+        {
+          name: 'Aceptar',
+          title: '<i class="nb-plus-circled" title="Aceptar"></i>'
+        },
+        {
+          name: 'Rechazar',
+          title: '<i class="nb-close-circled" title="Rechazar"></i>'
+        },
+      ],
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
     },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
     columns: {
       id: {
-        title: 'ID',
-        type: 'number',
+        title: 'Id Alerta',
+        editable: false,
       },
-      firstName: {
-        title: 'First Name',
-        type: 'string',
+      entidad: {
+        title: 'Entidad',
+        editable: false,
       },
-      lastName: {
-        title: 'Last Name',
-        type: 'string',
+      fecha: {
+        title: 'Fecha',
+        editable: false,
       },
-      username: {
-        title: 'Username',
-        type: 'string',
+      atiende: {
+        title: 'Atiende',
+        valuePrepareFunction: (value) => { return value === '' ? 'Sin Asignar' : value },
+        editor: {
+          type: 'list',
+          config: {
+            list: [
+              { value: 'Michael Seat', title: 'Michael Seat' },
+              { value: 'Emma Audi', title: 'Emma Audi' },
+            ],
+          },
+        },
+        filter: {
+          type: 'list',
+          config: {
+            selectText: 'Todos',
+            list: [
+              { value: '', title: 'Sin Asignar' },
+              { value: 'Michael Seat', title: 'Michael Seat' },
+              { value: 'Emma Audi', title: 'Emma Audi' },
+            ],
+          },
+        },
       },
-      email: {
-        title: 'E-mail',
-        type: 'string',
-      },
-      age: {
-        title: 'Age',
-        type: 'number',
+      estatus: {
+        title: 'Validar',
+        editable: false,
+        filter: {
+          type: 'list',
+          config: {
+            selectText: 'Select...',
+            list: [
+              { value: 'Pendiente', title: 'Pendiente' },
+              { value: 'Positivo', title: 'Positivo' },
+              { value: 'Negativo', title: 'Negativo' },
+            ],
+          },
+        },
       },
     },
   };
@@ -59,12 +98,9 @@ export class UserComponent {
     const data = this.service.getData();
     this.source.load(data);
   }
-
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
+  
+  onCustom(event) {
+    alert(`'${event.action}' el registro de la alerta №: ${event.data.id}`)
   }
+
 }

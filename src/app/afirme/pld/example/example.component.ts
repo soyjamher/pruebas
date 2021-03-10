@@ -53,6 +53,17 @@ export class ExampleComponent {
             ],
           },
         },
+        
+        filter: {
+          type: 'list',
+          config: {
+            selectText: 'Todos',
+            list: [
+              { value: '', title: 'Sin Asignar' },
+              { value: 'Michael Seat', title: 'Michael Seat' },
+            ],
+          },
+        },
       },
       estatus: {
         title: 'Validar',
@@ -60,7 +71,7 @@ export class ExampleComponent {
         filter: {
           type: 'list',
           config: {
-            selectText: 'Select...',
+            selectText: 'Todos',
             list: [
               { value: 'Pendiente', title: 'Pendiente' },
               { value: 'Positivo', title: 'Positivo' },
@@ -75,12 +86,30 @@ export class ExampleComponent {
   source: LocalDataSource = new LocalDataSource();
 
   constructor(private service: SmartTableData) {
-    const data = this.service.getData();
+    const elemets = this.service.getData();
+    const data = elemets.filter(filtroUsuario);
     this.source.load(data);
   }
   
   onCustom(event) {
     alert(`'${event.action}' el registro de la alerta №: ${event.data.id}`)
   }
-
+  
 }
+
+function filtroUsuario(elemento) {
+  let mostrar = false;
+  if( elemento.idEstatus == 6 ){
+    mostrar = true;
+  } else {
+    mostrar = false;
+  }
+  if(elemento.atiende=='Emma Audi'){
+    mostrar = true;
+  } else {
+    mostrar = false;
+  }  
+  return mostrar;
+}
+
+

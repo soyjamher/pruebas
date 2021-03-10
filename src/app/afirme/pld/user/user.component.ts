@@ -18,10 +18,10 @@ export class UserComponent {
       edit : true,
       position : 'right',
       custom : [
-        /*{
-          name: 'edit',
-          title: '<i class="nb-edit" title="Edit"></i>'
-        },*/
+        {
+          name: 'editButtonContent',
+          title: '<a href="#" class="ng2-smart-action ng2-smart-action-edit-edit ng-star-inserted"><i class="nb-edit" title="Edit"></i></a>'
+        },
         {
           name: 'Aceptar',
           title: '<i class="nb-plus-circled" title="Aceptar"></i>'
@@ -80,7 +80,7 @@ export class UserComponent {
         filter: {
           type: 'list',
           config: {
-            selectText: 'Select...',
+            selectText: 'Todos',
             list: [
               { value: 'Pendiente', title: 'Pendiente' },
               { value: 'Positivo', title: 'Positivo' },
@@ -100,7 +100,11 @@ export class UserComponent {
   }
   
   onCustom(event) {
-    alert(`'${event.action}' el registro de la alerta №: ${event.data.id}`)
+    if( event.action === 'Aceptar' ){
+      alert('holi')
+    } else {
+      alert('que mostramos?')
+    }
   }
 
 }
